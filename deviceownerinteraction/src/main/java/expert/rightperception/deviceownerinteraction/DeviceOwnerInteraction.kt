@@ -15,13 +15,13 @@ object Kiosk {
     private const val HOST = "kiosk"
 
     private const val KEY_LOCK_TASK_PACKAGE_NAME = "lockTaskPackageName"
-    private const val KEY_LOCK_TASK_ENABLED = "lockTaskPackageName"
+    private const val KEY_LOCK_TASK_ENABLED = "lockTaskEnabled"
 
     @SuppressLint("QueryPermissionsNeeded")
     fun Activity.startKiosk() {
         val uri = Uri.Builder()
             .scheme(DeviceOwnerInteraction.SCHEME)
-            .query(HOST)
+            .authority(HOST)
             .appendQueryParameter(KEY_LOCK_TASK_PACKAGE_NAME, packageName)
             .appendQueryParameter(KEY_LOCK_TASK_ENABLED, true.toString())
             .build()
@@ -38,7 +38,7 @@ object Kiosk {
         stopLockTask()
         val uri = Uri.Builder()
             .scheme(DeviceOwnerInteraction.SCHEME)
-            .query(HOST)
+            .authority(HOST)
             .appendQueryParameter(KEY_LOCK_TASK_PACKAGE_NAME, packageName)
             .appendQueryParameter(KEY_LOCK_TASK_ENABLED, false.toString())
             .build()
