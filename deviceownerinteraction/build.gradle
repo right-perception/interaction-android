@@ -6,7 +6,7 @@ plugins {
 }
 
 def lib_group = 'com.github.right-perception'
-def lib_version = '0.5.0'
+def lib_version = '0.5.1'
 
 group=lib_group
 version=lib_version
