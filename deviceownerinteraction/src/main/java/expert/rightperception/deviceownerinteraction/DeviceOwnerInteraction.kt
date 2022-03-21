@@ -67,7 +67,7 @@ object Kiosk {
     }
 
     @SuppressLint("QueryPermissionsNeeded")
-    fun Context.isPackageExisted(): Boolean {
+    fun Context.isDeviceOwnerAvailable(): Boolean {
         val packages: List<ApplicationInfo>
         val pm: PackageManager = packageManager
         packages = pm.getInstalledApplications(0)
